@@ -1,7 +1,7 @@
 # TTS_GTK
 Graphical interface for Coqui TTS (Text to Speech) command line. Made in GTK3 and Python3 for the Linux platform.
 
-This program uses the [Coqui TTS](https://github.com/coqui-ai/TTS) software for converting text to speech. This is a very interesting project and is constantly updated and improving fast. But it still has some limitations. You can use it from command line or install it as a server. I decided to add a third option: A GTK3 graphical interface. I also added support and use of all the cpu cores you have, the text will be processed in the background while the first sentence will be soon to hear as an audio clip.
+This program uses the [Coqui TTS](https://github.com/coqui-ai/TTS) software for converting text to speech. This is a very interesting project and is constantly updated and improving fast. But it still has some limitations. You can use it from command line or install it as a server. I decided to add a third option: A GTK3 graphical interface. I also added multithreading support and use all the cpu cores you have, while audio is playing, the next lines of text will be processed in the background. I started this project so i can copy and paste some text from the web and let the computer read it to me, after a while this first beta version came to life. But still a work in progress, you can add to the project as well, help me improve it faster.
 
 The sentence read out as audio is visible as the blue text:
 ![Screenshot](https://github.com/technout/tts_gtk/blob/main/screen_tts_gtk_1.png)
@@ -9,6 +9,8 @@ The sentence read out as audio is visible as the blue text:
 You can also change some parameters (like the audio speed or the voice model) with extra options, some examples:
 ![Screenshot](https://github.com/technout/tts_gtk/blob/main/screen_tts_gtk_2.png)
 
+Requirements
+------------
 For running TTS or TTS_GTK it is advisable to have some powerful hardware, like an 8-core cpu with 16GB of RAM will absolutely work.
 
 Installation
@@ -27,4 +29,4 @@ Extract the files and run tts_gtk.py from the project directory (form the comman
 
 License
 -------
-TTS_GTK is released under the same terms of the Mozilla Public License 2.0. (as well for TTS) Please refer to the LICENSE file.
+TTS_GTK is released under the same terms of the Mozilla Public License 2.0 (as well for TTS). Please refer to the LICENSE file.
