@@ -27,7 +27,8 @@ And last: download or git clone the TTS_GTK project, releases: <https://github.c
 
 Extract the files and run tts_gtk.py from the project directory (form the command line: ```python3 /path/to/file/tts_gtk.py```)
 
-Good to know: tts_gtk.py needs read and write access to the directory it is placed. It makes an audio sub directory for making (temporary) audio files.
+Good to know: tts_gtk.py needs read and write access to /home/{current_user}/python/ttsgui/audio/
+This working directory can be changed in line 70
 
 License
 -------
