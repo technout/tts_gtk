@@ -1,7 +1,7 @@
 # TTS_GTK
 Graphical interface for Coqui TTS (Text to Speech) command line. Made in GTK3 and Python3 for the Linux platform.
 
-This program uses the [Coqui TTS](https://github.com/coqui-ai/TTS) software for converting text to speech. This is a very interesting project and is constantly updated and improving fast. But it still has some limitations. You can use it from command line or install it as a server. I decided to add a third option: A GTK3 graphical interface. I also added multithreading support and use all the cpu cores you have. While audio is playing, the next lines of text will be processed in the background. I started this project so i can copy and paste some text from the web and let the computer read it to me, after a while this first beta version came to life. But still a work in progress, you can add to the project as well, help me improve it faster.
+This program uses the [Coqui TTS](https://github.com/coqui-ai/TTS) software for converting text to speech. This is a very interesting project and is constantly updated and improving fast. But it still has some limitations. You can use it from command line or install it as a server. I decided to add a third option: A GTK3 graphical interface. I also added multithreading support and use all the cpu cores you have. While audio is playing, the next lines of text will be processed in the background. I started this project so i can copy and paste some text from the web and let the computer read it to me, after a while this first beta version came to life. But still a work in progress, you can add to the project as well, all help is welcome. And help to improve this faster!
 
 Language support: English, German, Spanish, Italian and some other languages have voice models (See Coqui TTS)
 
