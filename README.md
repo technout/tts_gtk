@@ -23,11 +23,11 @@ If you don't have Python3 installed, start with that:
 ```sudo apt install python3```
 
 Then install TTS with:
-```pip install TTS```
+```pip3 install TTS```
 
 And last: download or git clone the TTS_GTK project, releases: <https://github.com/technout/tts_gtk/releases>
 
-Extract the files and run tts_gtk.py from the project directory (form the command line: ```python3 /path/to/file/tts_gtk.py```)
+Extract the files and run tts_gtk.py from the project directory (from the command line: ```python3 /path/to/file/tts_gtk.py```)
 
 Good to know: tts_gtk.py needs read and write access to /home/{current_user}/python/ttsgui/audio/
 This working directory can be changed in line 70
