@@ -54,7 +54,7 @@ Extra options you can use:
         tts_models/nl/mai/tacotron2-DDC
 --max_words=14      Maximum words per line. The TTS processor
         has its limits (as for version 0.7.1).
-        The default workable value now 40 words.
+        The default workable value now is 40 words.
         This can be changed in newer releases.
 ```
 License
