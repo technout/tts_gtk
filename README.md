@@ -15,7 +15,7 @@ The sentence read out as audio is visible as the blue text:
 ![Screenshot](https://github.com/technout/tts_gtk/blob/main/screen_tts_gtk_1.png)
 
 You can also change some parameters (like the audio speed or the voice model) with extra options, some examples:
-![Screenshot](https://github.com/technout/tts_gtk/blob/main/screen_tts_gtk_2.png)
+![Screenshot](https://github.com/technout/tts_gtk/blob/main/screen_tts_gtk_3.png)
 
 Requirements
 ------------
