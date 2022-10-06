@@ -24,7 +24,7 @@
 # BUGS: 
 # Many still left
 
-__version__ = "0.5-2022.09.30"
+__version__ = "0.5-2022.10.06"
 
 # from curses import window
 import logging
@@ -40,8 +40,6 @@ import subprocess
 import glob
 import shutil
 import getpass
-# import TextHandler
-# from ttsgui_window import load_gtk_window, window, builder
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 import argparse
@@ -61,15 +59,11 @@ from multiprocessing import Process, current_process, Lock
 # from queue import Empty, Queue
 
 class Tts_gtk():
-# def main(*args): # todo: rewrite to Class
     def __init__(self, *args):
-        '''Main entry point for the application.'''
         global builder, Queuelist
         global wav_output_dir, filename, MyUIDs, UID, handlers, PlaySound, TextList, AddtoQueue
         global WaitingList, ProcessLock, PlayingLock
-        wav_output_dir = f'/home/{getpass.getuser()}/python/ttsgui/audio/'
-        os.chdir(wav_output_dir)
-        filename = 'tts_speech'
+        global project_directory
 
         builder = Gtk.Builder()
         builder.add_from_file(f'/home/{getpass.getuser()}/python/ttsgui/tts_gtk.glade')
@@ -110,8 +104,12 @@ class Tts_gtk():
         # QueueProcessing = Queue()
         ProcessLock = Lock()
         PlayingLock = Lock()
+        project_directory = "/python/ttsgui"    # change project directory here
+        wav_output_dir = f'/home/{getpass.getuser()}{project_directory}/audio/'
+        os.chdir(wav_output_dir)
+        filename = 'tts_speech'
 
-        # call in gtk mainloop this function:
+        # within gtk mainloop call this function:
         GLib.timeout_add(500, self.update_ram_status) # every 500 ms
         # GLib.timeout_add(600, self.update_speaker_label)
 
@@ -146,10 +144,10 @@ class Tts_gtk():
             --voicemodel=tts_models/en/ljspeech/vits    This is the default
                     voicemodel, you can use others like:
                     tts_models/nl/mai/tacotron2-DDC
-            --max_words=16      Maximum words per line. The TTS processor
+            --max_words=14      Maximum words per line. The TTS processor
                     has its limits (as for version 0.7.1).
-                    The default workeble value is 14 words.
-                    This can be increased in newer releases.
+                    The default workable value now 40 words.
+                    This can be changed in newer releases.
             """
         )
         dialog.run()
