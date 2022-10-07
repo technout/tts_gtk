@@ -19,24 +19,39 @@ You can also change some parameters (like the audio speed or the voice model) wi
 
 Requirements
 ------------
-For running TTS or TTS_GTK it is advisable to have some powerful hardware, like an 8-core cpu with 16GB of RAM will absolutely work.
+For running TTS or TTS_GTK it is advisable to have a modern cpu, 4-core cpu with 8GB of RAM will do the job.
 
 Installation
 ------------
 TTS and TTS_GTK is working with Ubuntu 18.04 (or newer) with python >= 3.7, < 3.11..
 
-If you don't have Python3 installed, start with that:
+1) If you don't have Python3 installed, start with that: <br />
 ```sudo apt install python3```
 
-Then install TTS with:
-```pip3 install TTS```
+2) Then install TTS with: <br />
+```pip install TTS``` <br />
+(this will download approximately 1,1 GB including the English voicemodel)
 
-And last: download or git clone the TTS_GTK project, releases: <https://github.com/technout/tts_gtk/releases>
+3) TTS_GTK need some modules, you can install them with: <br />
+```pip install pyrubberband pydub pygame psutil```
 
-Extract the files and run tts_gtk.py from the project directory (from the command line: ```python3 /path/to/file/tts_gtk.py```)
+4) You also need espeak-ng for the voice model: <br /> ```sudo apt install espeak-ng```
 
-Good to know: tts_gtk.py needs read and write access to the project directory. The default project directory is pointing to: /home/{current_user}/python/ttsgui/audio/
-This directory can be changed in line 107 of tts_gtk.py
+5) Now download or git clone this TTS_GTK project (you just need two files: tts_gtk.py and tts_gtk.glade)
+
+6) Place them in the same directory (where you have normal read and write access to)
+
+7) Before running TTS_GTK please test if TTS is working, test it with a simple command line: <br />
+```tts --text "Hello world." --model_name "tts_models/en/ljspeech/vits"``` (if no errors appear, it will be working fine)
+
+- If TTS is not found: <br /> 
+Add the tts directory to your PATH variable: <br /> 
+Or check with ```pip list``` if it is installed. <br /> 
+
+8) Run it from command line: <br /> ```python3 /path/to/file/tts_gtk.py```)
+
+Good to know: The default project directory is pointing to: /home/{current_user}/python/ttsgui/audio/ <br />
+This directory can be changed in line 107 of tts_gtk.py (im working on this..)
 
 TTS_GTK is working with Coqui TTS version 0.8. It can also work with older versions, but you need to add the --max_words=14 option in the Extra options text area. So the lines are cut in shorter sentences. I you don't do this you might end up with audio playback ending in the middle of a sentence.
 
@@ -59,4 +74,4 @@ Extra options you can use:
 ```
 License
 -------
-TTS_GTK is released under the same terms of the Mozilla Public License 2.0 (as well for TTS). Please refer to the LICENSE file.
+TTS_GTK is released under the terms of the Mozilla Public License 2.0 (as well for TTS). Please refer to the LICENSE file.
