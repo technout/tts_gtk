@@ -1,7 +1,7 @@
 import time
 from gi.repository import Gtk, GLib
 
-class DialogWindow(Gtk.Window):
+class DialogWindow(Gtk.Window): # test
     def __init__(self):
         super().__init__(title="FileChooser Example")
 
