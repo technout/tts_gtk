@@ -391,7 +391,7 @@ def lowRAM():
     return False
 
 def num_processes():
-    count = 0
+    count = 1
     proc_iter = psutil.process_iter(attrs=["name"])
     for p in proc_iter:
         if "tts" in p.info["name"]:
@@ -406,8 +406,8 @@ def processText(textlist, voicemodel, UID):
     # gQueuelist.set_processing(True)
     subproc = []
     pdone = 0
-    # max_processes = os.cpu_count() - 1
-    max_processes = 2
+    max_processes = os.cpu_count() - 1
+    # max_processes = 2
     # set_lblstatus('Status: Processing text..') # todo: remove all gtk reference from threads!
     iLines = len(textlist)
     Queuelist.set_status(f'Processing {str(iLines)} text lines..')
