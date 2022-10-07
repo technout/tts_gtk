@@ -117,7 +117,7 @@ class Tts_gtk():
 
         # within gtk mainloop call this function:
         GLib.timeout_add(500, self.update_ram_status) # every 500 ms
-        # GLib.timeout_add(550, self.update_speaker_label)
+        # GLib.timeout_add(570, self.update_speaker_label)
 
         window.show_all()
         deleteOldFiles(MyUIDs)
