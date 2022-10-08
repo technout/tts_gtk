@@ -9,18 +9,17 @@
 # TODO:
 # finetune: processing of first line
 # shortcut keys for playing audio
-# set maximum waitingtime for audio
-# choose the voice
-# choose language
-# number all sentences, as optional
+# set maximum waitingtime before audio is played
+# choose voice and language
 # search in text
-# Replace golbal UID with parameters
+# Replace global UID with parameters
 # Queue multiple sentences and enable to save
 # Filter sentence starting with '<space> or "<space>
 # except KeyboardInterrupt
 # add css classes for gtk
 # adding help button with help text
 # add list of models, read from https://github.com/coqui-ai/TTS/blob/dev/TTS/.models.json
+# add a --max_process variable, to overwrite the default
 
 # BUGS: 
 # Many still left
@@ -64,10 +63,16 @@ class Tts_gtk():
         global builder, Queuelist
         global wav_output_dir, filename, MyUIDs, UID, handlers, PlaySound, TextList, AddtoQueue
         global WaitingList, ProcessLock, PlayingLock
-        global project_directory
+        # global project_directory
 
-        builder = Gtk.Builder()
+        # change working dir so tts_gtk.glade can be found in same dir
+        try:
+            os.chdir(os.path.dirname(sys.argv[0]))
+        except FileNotFoundError:
+            os.chdir(os.path.dirname('./'))
+        # print(f'Working directory: {os.getcwd()}')
         # builder.add_from_file(f'/home/{getpass.getuser()}/python/ttsgui/tts_gtk.glade')
+        builder = Gtk.Builder()
         builder.add_from_file('tts_gtk.glade')
         handlers = {
             "onDestroy": self.onDestroy,
