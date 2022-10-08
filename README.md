@@ -49,7 +49,7 @@ TTS and TTS_GTK is working with Ubuntu 18.04 (or newer) with python >= 3.7, < 3.
 If that is working, you can add this line to your user profile, to make it permanent after a reboot: ```nano ~/.profile``` <br /> 
 Or check with ```pip list``` if it is installed. <br /> 
 
-8) Run it from command line: <br /> ```python3 /path/to/file/tts_gtk.py```)
+8) Finally run TTS_GTK with command: <br /> ```python3 /path/to/file/tts_gtk.py```
 
 TTS_GTK is working with Coqui TTS version 0.8. It can also work with older versions, but you need to add the --max_words=14 option in the Extra options text area. So the lines are cut in shorter sentences. I you don't do this you might end up with audio playback ending in the middle of a sentence.
 
