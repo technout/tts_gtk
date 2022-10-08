@@ -42,16 +42,14 @@ TTS and TTS_GTK is working with Ubuntu 18.04 (or newer) with python >= 3.7, < 3.
 6) Place them in the same directory (where you have normal read and write access to)
 
 7) Before running TTS_GTK please test if TTS is working, test it with a simple command line: <br />
-```tts --text "Hello world." --model_name "tts_models/en/ljspeech/vits"``` (if no errors appear, it will be working fine)
+```tts --text "Hello world." --model_name "tts_models/en/ljspeech/vits"``` (if no errors appear, it will work fine)
 
-- If TTS is not found: <br /> 
-Add the tts directory to your PATH variable: <br /> 
+- Error: if TTS is not found, add the tts directory to your PATH variable: <br /> 
+```export PATH="$PATH:/home/your_username/.local/bin"```
+If that is working, you can add this line to your user profile, to make it permanent after a reboot: ```nano ~/.profile``` <br /> 
 Or check with ```pip list``` if it is installed. <br /> 
 
-8) Run it from command line: <br /> ```python3 /path/to/file/tts_gtk.py```)
-
-Good to know: The default project directory is pointing to: /home/{current_user}/python/ttsgui/audio/ <br />
-This directory can be changed in line 107 of tts_gtk.py (im working on this..)
+8) Finally run TTS_GTK with command: <br /> ```python3 /path/to/file/tts_gtk.py```
 
 TTS_GTK is working with Coqui TTS version 0.8. It can also work with older versions, but you need to add the --max_words=14 option in the Extra options text area. So the lines are cut in shorter sentences. I you don't do this you might end up with audio playback ending in the middle of a sentence.
 
